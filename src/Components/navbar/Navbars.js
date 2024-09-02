@@ -10,10 +10,13 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 
 
 function Navbars() {
+
+
+  const navigate=useNavigate()
   
     return (
     <div>
@@ -21,7 +24,7 @@ function Navbars() {
 
 <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">My Blog</Navbar.Brand>
+        <Navbar.Brand href="">My Blog</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -29,10 +32,10 @@ function Navbars() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link> <Link className='link' to={"/"}> Home</Link>    </Nav.Link>
+            <Nav.Link onClick={()=>{navigate("/")}} > Home</Nav.Link>
             
             <Nav.Link > 
-              <Link className='link' > Contact</Link>
+              {/* <Link className='link' > Contact</Link> */}
             </Nav.Link>
           </Nav>
           {/* <Form className="d-flex">
